@@ -1,0 +1,27 @@
+// Type specification chars
+// Character	Description
+// i	corresponding variable has type integer
+// d	corresponding variable has type double
+// s	corresponding variable has type string
+// b	corresponding variable is a blob and will be sent in packets
+'       global $connect;
+'       $stmt = $this->$connect->prepare("select * from xxxx where id =? ");
+' ------> //!exp  bind_param("i",$idxx);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+
+
+
+---------------------------------------------------------
+
+$mysqli_result -> fetch_array(resulttype)
+// Parameter	Description
+ 
+resulttype	Optional. Specifies what type of array that should be produced. Can be one of the following values:
+                MYSQLI_ASSOC
+                MYSQLI_NUM
+                MYSQLI_BOTH (this is default)
+
+---------------------------------------------------------
+DB -> workskill.sql
