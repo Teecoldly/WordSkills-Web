@@ -128,8 +128,8 @@ class Product
             }
         }else{
 
-            $stmt =$this->$connect->prepare("INSERT INTO `product`(  UPDATE `product` SET  `product_name`= ?,`product_price`=?,`product_amout`=?, `product_details`=?, `poston`=Now() WHERE `product_ID`=?");
-            $stmt->bind_param("ssssss",$data["nameproduct"],$data["prict"],$data["totalproduct"],$data["detailproduct"],$id );
+            $stmt =$this->$connect->prepare("UPDATE `product` SET  `product_name`= ?,`product_price`=?,`product_amout`=?, `product_details`=?, `poston`=Now() WHERE `product_ID`=?");
+            $stmt->bind_param("sssss",$data["nameproduct"],$data["prict"],$data["totalproduct"],$data["detailproduct"],$id );
             $stmt -> execute();
             if(  $stmt->error){
                 echo $stmt->error;
